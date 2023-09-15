@@ -1,5 +1,5 @@
 """Set up ktools."""
-class ktools():
+class ktools:
     def m(self):
         """Shorthand for move"""
         move()
@@ -568,44 +568,42 @@ class ktools():
         self.m()
         self.tl()
         # repeat this function 9 times
-    def mm(self, num):
-        """Move Multiple"""
-        for number in range(0, num):
-            self.m()
-    def putm(self, num):
-        """Put Multiple"""
-        for i in range(num - 1):
+    def safe412(self):
+        if self.lib() and not self.rib():
+            return False
+        else:
+            return True
+    def carpeting412(self):    
+        self.m()
+        self.tl()
+        self.m()
+        if self.lib() and self.fib() and self.rib():
             self.put()
+            self.ta()
+        elif self.lib() and self.rib() and self.fic():
+            x = 0
+            while not self.fib() and x < 3:
+                if self.safe412():
+                    self.m()
+                    x += 1
+                else:
+                    x = 'fail'
+                    self.ta()
+            if not x == 3 and not x == 'fail':
+                self.put()
+                pass
+            if not x == 'fail':
+                self.ta()
+        elif self.lib() and not self.rib():
+            self.ta()
             self.m()
-        self.put()
-    def pickm(self, num):
-        """Pick Multiple"""
-        for _ in range(num - 1):
-            self.pick()
+        elif self.rib() and not self.lib():
+            self.ta()
             self.m()
-        self.pick()
-    def one(self):
+        elif not self.rib() and not self.lib():
+            self.ta()
+            self.m()
+        while self.fic():
+            self.m()
         self.tl()
-        self.putm(5)
-        self.ta()
-        self.mm(4)
-        self.tl()
-        self.mm(2)
-    def zero(self):
-        self.tl()
-        self.putm(5)
-        self.tr()
-        self.m()
-        self.putm(2)
-        self.tr()
-        self.m()
-        self.putm(4)
-        self.tr()
-        self.m()
-        self.put()
-        self.ta()
-        self.mm(3)
-    def onebillion(self):
-        self.one()
-        for i in range(9):
-            self.zero()
+kt = ktools()
