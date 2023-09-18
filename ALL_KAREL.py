@@ -627,3 +627,20 @@ class ktools:
             kt.jump()
         if kt.SOB():
             kt.pick()
+    def find(self):
+        """Find for 515"""
+        while not facing_north():
+            self.tl()
+        self.m()
+        if not self.SOB():
+            self.tl()
+            self.m()
+            self.tl()
+            self.m()
+        for _ in range(2):
+            if not self.SOB():
+                self.m()
+                self.tl()
+                self.m()
+        pass
+kt = ktools()
