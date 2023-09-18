@@ -606,4 +606,24 @@ class ktools:
         while self.fic():
             self.m()
         self.tl()
-kt = ktools()
+    def SOB(self):
+        """Standing on Beeper"""
+        return balls_present()
+    def jump(self):
+        """Jump for 510"""
+        while self.fic():
+            self.m()
+        self.tl()
+        while self.rib():
+            self.m()
+        self.tr()
+        self.m()
+        self.tr()
+        while self.fic():
+            self.m()
+        self.tl()
+    def KAREL510(self):
+        while not kt.SOB():
+            kt.jump()
+        if kt.SOB():
+            kt.pick()
